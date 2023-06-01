@@ -54,7 +54,7 @@ Nach dem 4-ten SampleRTT (90 ms):
     
     ### Szenario 1:
     
-    ![Ablaufdiagramm_Szenario1.png]
+    ![Ablaufdiagramm_Szenario1.png](https://github.com/tombackert/BSN_SS23/blob/master/US6/Ablaufdiagramm_Szenario1.png?raw=true)
     
     - Sender sendet Paket 0,1,2
     - Empfänger empfängt Paket 0,1,2
@@ -63,12 +63,14 @@ Nach dem 4-ten SampleRTT (90 ms):
     
     ### Szenario 2:
     
-    ![Ablaufdiagramm_Szenario2.png]
+    ![Ablaufdiagramm_Szenario2.png](https://github.com/tombackert/BSN_SS23/blob/master/US6/Ablaufdiagramm_Szenario2.png?raw=true)
     
     - Sender sendet Paket 0,1,2
     - Empfänger empfängt Paket 0,1,2
     - Empfänger sendet ACK 0,1,2 und der Sender empfängt diese
     - Sender sendet die nächsten drei Pakete, aber das Paket mit der Sequenznummer 0 geht verloren.
+    
+    Was fällt auf?
     
     Auffällig in beiden Szenarien ist, dass bei verlorenen Paketen oder ACKs eine Wiederholung der Pakete erforderlich ist, was zu einer geringeren Effizienz führt.
     
@@ -81,4 +83,6 @@ Nach dem 4-ten SampleRTT (90 ms):
     Nein, in Selective-Repeat ist es nicht möglich, dass ein Sender ein ACK für ein Paket erhält, das außerhalb seines gegenwärtigen Fensters liegt. Das liegt daran, dass der Sender nur Pakete innerhalb seines Sendefensters überträgt und der Empfänger nur ACKs für Pakete innerhalb seines Empfangsfensters sendet. Wenn der Sender ein ACK für ein Paket außerhalb seines Fensters erhält, wäre dies auf einen Fehler zurückzuführen.
     
 
-Links:
+## Links:
+1. Berechnung der RTT: https://github.com/tombackert/BSN_SS23/blob/master/US6/calculate_sampleRTT.py
+2. 
