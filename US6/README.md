@@ -72,7 +72,13 @@ Nach dem 4-ten SampleRTT (90 ms):
     
     Was fällt auf?
     
-    Auffällig in beiden Szenarien ist, dass bei verlorenen Paketen oder ACKs eine Wiederholung der Pakete erforderlich ist, was zu einer geringeren Effizienz führt.
+    Auffällig in beiden Szenarien ist, dass die Verluste in der Kommunikation zu einer Wiederholung der Pakete führen, was zu einer geringeren Effizienz führt.
+
+    Im ersten Szenario gehen die Bestätigungen (ACKs) vom Empfänger verloren, was dazu führt, dass der Sender alle drei Pakete erneut sendet. Dies bedeutet, dass trotz des erfolgreichen Empfangs der Pakete durch den Empfänger, die Pakete aufgrund des Fehlens einer Bestätigung erneut gesendet werden müssen.
+
+    Im zweiten Szenario gehen die Pakete, die vom Sender gesendet werden, verloren. Obwohl der Sender eine Bestätigung für die ersten drei Pakete erhält, führt der Verlust des ersten der nächsten drei Pakete dazu, dass dieses Paket erneut gesendet werden muss.
+
+    In beiden Fällen führen Verluste in der Kommunikation zu Redundanzen und Ineffizienzen in der Datenübertragung. Dies zeigt die Wichtigkeit von Bestätigungen und Fehlerkontrollen in Protokollen zur Übertragungssteuerung wie Go-Back-N und Selective Repeat.
     
 3. Maximale Fenstergröße bei Selective-Repeat (2 Punkte):
     
