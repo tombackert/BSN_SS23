@@ -36,6 +36,7 @@ def dijkstra(graph, start):
 
     return results
 
+# Hier den entsprechenen Graphen einfügen
 graph = {
     'A': {'B': 8, 'C': 9, 'E': 5},
     'B': {'A': 8, 'E': 2, 'F': 4},
@@ -48,7 +49,7 @@ graph = {
 
 steps = dijkstra(graph, 'A')
 
-# Drucke die Schritte schön formatiert aus
+# Output
 for step, visited, distances in steps:
     print(f"Schritt {step}: N' = {visited}")
     for node in 'BCDEFG':

@@ -1,0 +1,56 @@
+Schritt 0: N' = ['A']
+D(B), p(B) = (8, A) # kürzerer Weg: A->B      
+D(C), p(C) = (9, A) # kürzerer Weg: A->C      
+D(D), p(D) = (inf, -) 
+D(E), p(E) = (5, A) # kürzerer Weg: A->E      
+D(F), p(F) = (inf, -) 
+D(G), p(G) = (inf, -) 
+---
+Schritt 1: N' = ['A', 'E']
+D(B), p(B) = (7, E) # kürzerer Weg: A->E->B   
+D(C), p(C) = (9, A) 
+D(D), p(D) = (6, E) # kürzerer Weg: A->E->D   
+D(E), p(E) = (5, A) 
+D(F), p(F) = (inf, -) 
+D(G), p(G) = (inf, -) 
+---
+Schritt 2: N' = ['A', 'E', 'D']
+D(B), p(B) = (7, E) 
+D(C), p(C) = (8, D) # kürzerer Weg: A->E->D->C
+D(D), p(D) = (6, E) 
+D(E), p(E) = (5, A)
+D(F), p(F) = (12, D) # kürzerer Weg: A->E->D->F
+D(G), p(G) = (14, D) # kürzerer Weg: A->E->D->G
+---
+Schritt 3: N' = ['A', 'E', 'D', 'B']
+D(B), p(B) = (7, E)
+D(C), p(C) = (8, D)
+D(D), p(D) = (6, E)
+D(E), p(E) = (5, A)
+D(F), p(F) = (11, B) # kürzerer Weg: A->E->B->F
+D(G), p(G) = (14, D)
+---
+Schritt 4: N' = ['A', 'E', 'D', 'B', 'C']
+D(B), p(B) = (7, E)
+D(C), p(C) = (8, D) 
+D(D), p(D) = (6, E)
+D(E), p(E) = (5, A)
+D(F), p(F) = (11, B)
+D(G), p(G) = (14, D)
+---
+Schritt 5: N' = ['A', 'E', 'D', 'B', 'C', 'F']
+D(B), p(B) = (7, E)
+D(C), p(C) = (8, D)
+D(D), p(D) = (6, E)
+D(E), p(E) = (5, A)
+D(F), p(F) = (11, B)
+D(G), p(G) = (13, F) # kürzerer Weg: A->E->B->F->G
+---
+Schritt 6: N' = ['A', 'E', 'D', 'B', 'C', 'F', 'G']
+D(B), p(B) = (7, E)
+D(C), p(C) = (8, D)
+D(D), p(D) = (6, E)
+D(E), p(E) = (5, A)
+D(F), p(F) = (11, B)
+D(G), p(G) = (13, F)
+---
